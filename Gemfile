@@ -58,4 +58,4 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'rswag', '~> 2.5', '>= 2.5.1'
 
-gem "devise", "~> 4.8"
+gem 'devise', '~> 4.8'
