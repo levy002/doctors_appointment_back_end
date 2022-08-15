@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :doctors
       resources :appointments, only: %i[index]
       get '/appointment/:id', to: 'appointments#show'
-      post '/getAppointment', to: 'appointments#get_appointment'
+      post '/getAppointment', to: 'appointments#getappointment'
       post '/appointment', to: 'appointments#create'
       put '/appointment/:id', to: 'appointments#update'
       delete '/appointment/:id', to: 'appointments#destroy'

@@ -18,8 +18,8 @@ class Api::V1::AppointmentsController < ApplicationController
     render json: appoint
   end
 
-  def get_appointment
-    @appointment = Appointment.where(Appointment_params)
+  def getappointment
+    @appointment = Appointment.where(appointment_params)
     render json: @appointment
   end
 
