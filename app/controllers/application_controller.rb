@@ -5,8 +5,8 @@ class ApplicationController < ActionController::API
     render json: { error: e.message }, status: :unprocessable_entity
   end
 
-  rescue_from ActiveRecord::RecordNotFound do |e|
-    render json: { error: "Please add valid email!!" }, status: :unauthorized
+  rescue_from ActiveRecord::RecordNotFound do |_e|
+    render json: { error: 'Please add valid email!!' }, status: :unauthorized
   end
 
   def current_user
