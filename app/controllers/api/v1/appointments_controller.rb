@@ -18,7 +18,7 @@ class Api::V1::AppointmentsController < ApplicationController
     render json: appoint
   end
 
-  def getAppointment
+  def get_appointment
     @appointment = Appointment.where(Appointment_params)
     render json: @appointment
   end
@@ -48,8 +48,8 @@ class Api::V1::AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     if Doctor.find(params[:doctor_id])
       if @user[:id] == @appointment[:user_id]
-        update_Appointment = Appointment_params.merge(user: @user)
-        if @appointment.update(update_Appointment)
+        update_appointment = Appointment_params.merge(user: @user)
+        if @appointment.update(update_appointment)
           render json: { appointment: @appointment, message: 'Appointment updated successfully!' }
         else
           render json: { errors: @appointment.errors.full_messages, message: 'Appointment not updated!' }
