@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create(name: 'Rida Arif') }
+  let(:user) { User.create(name: 'Rida Arif', email: 'rida@gmail.com', password: '123456') }
 
   describe 'Validations' do
     it 'should not be nil' do
