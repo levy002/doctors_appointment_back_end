@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by_email!(params[:email])
     if @user&.valid_password?(params[:password])
-      render json: { data: { message: 'Logged in successfully!!', user: @user }, status: :ok}
+      render json: { data: { message: 'Logged in successfully!!', user: @user }, status: :ok }
     else
-      render json: { data: { message: 'Invalid login details', user: {} }, status: :unauthorized}
+      render json: { data: { message: 'Invalid login details', user: {} }, status: :unauthorized }
     end
   end
 
@@ -18,15 +18,14 @@ class UsersController < ApplicationController
           name: allowed_params[:name], email: allowed_params[:email],
           password: params[:password], password_confirmation: params[:password_confirmation]
         )
-        render json: {data: { message: 'Successfully signed up!!', user: @user }, status: :created}
+        render json: { data: { message: 'Successfully signed up!!', user: @user }, status: :created }
       else
-        render json: {data: { message: 'Password missmatch', user: {} }, status: :conflict}
+        render json: { data: { message: 'Password missmatch', user: {} }, status: :conflict }
       end
     else
-      render json: { data: { message: 'missing signup details', user: {} }, status: :partial_content}
+      render json: { data: { message: 'missing signup details', user: {} }, status: :partial_content }
     end
   end
-
 
   private
 
