@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   end
 
   rescue_from ActiveRecord::RecordNotFound do |e|
-    render json: { error: e.message }, status: :unauthorized
+    render json: { error: "Please add valid email!!" }, status: :unauthorized
   end
 
   def current_user
