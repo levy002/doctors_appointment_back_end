@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  # scope :api do
-  #   devise_for :users, 
-  #   controllers: { 
-  #     registrations: 'users/registrations',
-  #     sessions: 'users/sessions' }
-  # end
-
   devise_for :users
 
   post 'api/login', to: 'users#login'
   post 'api/register', to: 'users#signup'
   
+  namespace :api do
+    namespace :v1 do
+      resources :doctors
+    end
+  end
 end
