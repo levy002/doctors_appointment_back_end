@@ -4,10 +4,11 @@ class UsersController < ApplicationController
     if @user&.valid_password?(params[:password])
       render json: { message: 'Logged in successfully!!', user: @user }, status: :ok
     else
-      render json: { error: 'Invalid login details'}, status: :unauthorized
+      render json: { error: 'Invalid login details' }, status: :unauthorized
     end
   end
 
+  # rubocop:disable Metrics/PerceivedComplexity
   def signup
     if params[:name].present? &&
        params[:email].present? &&
@@ -19,16 +20,15 @@ class UsersController < ApplicationController
           name: allowed_params[:name], email: allowed_params[:email],
           password: params[:password], password_confirmation: params[:password_confirmation]
         )
-           if @user.save
-            render json: { message: 'Successfully signed up!!', user: @user }, status: :created 
-           end 
+        render json: { message: 'Successfully signed up!!', user: @user }, status: :created if @user.save
       else
-        render json: { error: 'Please confirm again your password!' }, status: :conflict 
+        render json: { error: 'Please confirm your password correctly!' }, status: :conflict
       end
     else
-      render json: { eror: 'Missing signup details'}, status: :partial_content
+      render json: { eror: 'Missing signup details' }, status: :partial_content
     end
   end
+  # rubocop:enable Metrics/PerceivedComplexity
 
   private
 
