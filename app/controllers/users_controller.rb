@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by_email!(params[:email])
     if @user&.valid_password?(params[:password])
-      render json: { data: @user }
+      render json: { data: { message: 'Logged in successfully!!', user: @user }, status: :ok}
     else
-      render json: { error: 'Invalid login details' }, status: :unauthorized
+      render json: { data: { message: 'Invalid login details', user: {} }, status: :unauthorized}
     end
   end
 
