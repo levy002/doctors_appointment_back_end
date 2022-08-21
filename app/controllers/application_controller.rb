@@ -9,10 +9,6 @@ class ApplicationController < ActionController::API
     render json: { error: 'Please add valid email!!' }, status: :unauthorized
   end
 
-  def current_user
-    User.first
-  end
-
   protected
 
   def update_allowed_parameters
