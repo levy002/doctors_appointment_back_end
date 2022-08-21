@@ -1,6 +1,6 @@
 class Api::V1::AppointmentsController < ApplicationController
   def index
-    appointments = Appointment.where(user_id: current_user.id)
+    appointments = Appointment.all
     if appointments
       render json: { data: appointments, message: 'Appointment loaded successfully!!' }, status: :ok
     else
@@ -10,7 +10,6 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def create
     appointment = Appointment.new(appointment_params)
-    appointment.user_id = current_user.id
     if appointment.save
       render json: { data: appointment, message: 'Appointment created successfully!' }, status: :created
     else
