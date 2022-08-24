@@ -19,7 +19,6 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def destroy
     appointment = Appointment.find(params[:id])
-    appointment.destroy
     if appointment.destroy!
       render json: { message: 'Appointment deleted successfully!', data: appointment.id }, status: :ok
     else
