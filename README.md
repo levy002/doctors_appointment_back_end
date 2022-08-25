@@ -4,6 +4,15 @@
 
 Project requirements can be found [here](https://github.com/microverseinc/curriculum-final-capstone/blob/main/projects/business_requirements.md)
 
+## Kanban Board
+We are three members in team 
+ - [@levy002](https://github.com/levy002)
+ - [@ridaarif98](https://github.com/ridaarif98)
+ - [@direakanbi](https://github.com/direakanbi)
+ 
+ Link to the project: [Kanban Board](https://github.com/users/levy002/projects/3)
+ Initail state link : [Images](https://docs.google.com/document/d/1ibXlFGJLTze06PhDKYPArzhhhpoiSkKvmgAUc_ucSuo/edit?usp=sharing)
+
 ## FrontEnd & Live Links
 - [Frontend Repo](https://github.com/ridaarif98/doctors_appointment_front_end)
 - [Frontend Live](https://appointment-app-frontend.netlify.app/)
