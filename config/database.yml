@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV['DATABASE_URL'] %>
   database: doctors_appointment_back_end_production
   username: doctors_appointment_back_end
   password: <%= ENV["DOCTORS_APPOINTMENT_BACK_END_DATABASE_PASSWORD"] %>
